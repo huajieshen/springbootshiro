@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bayi.mapper.UserMapper">
+    <select id="findByName" parameterType="String" resultType="User">
+        SELECT id, NAME, PASSWORD FROM USER WHERE NAME = #{name}
+    </select>
+
+    <select id="findById" parameterType="int" resultType="User">
+        SELECT id, NAME, PASSWORD, perms FROM USER WHERE id = #{id}
+    </select>
+
+</mapper>
